@@ -1,0 +1,27 @@
+<div class="container" *ngIf="in">
+  <div class="header">
+    <h1>Mis Reservas</h1>
+    <div class="notification">
+      <p *ngIf="MSG">{{ MSG }}</p>
+    </div>
+  </div>
+  <div *ngIf="logged && loaded">
+    <div class="containerReservas">
+      <div *ngFor=" let reserva of reservas" class="reservas">
+        <div class="restaurante">
+          <h2>Fecha: {{reserva.date}}</h2>
+        </div>
+        <div class="info">
+          <p>Hora: {{reserva.start_time}}</p>
+          <p>Mesa: {{reserva.table_id}}</p>
+        </div>
+        <div class="options">
+          <input (click)="deleteReserve(this.reserva.id)" class="delete" type="button" value="Eliminar">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container" *ngIf="!in">
+  <h1>INICIA SESION CRACK</h1>
+</div>

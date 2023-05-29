@@ -1,0 +1,463 @@
+@import"../../../styles.scss";
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+  margin-bottom: 10%;
+
+  .reserve {
+    grid-area: dateMesas;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-right: 4rem;
+
+  }
+
+  .mesas {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    margin-top: 4rem;
+    height: 50%;
+    gap: 2rem;
+
+    .selected {
+      background-color: $accentShadow !important;
+    }
+
+    .mesa {
+      display: flex;
+      justify-content: center;
+      justify-self: center;
+      border-radius: 1rem;
+      text-align: center;
+      color: white;
+      align-items: center;
+      width: 200px;
+      height: 100px;
+      background-color: $accentColor;
+      box-shadow: -1.2rem 0.5rem 2rem -0.5rem $buttonHover;
+      cursor: pointer;
+      transition: all;
+      transition-duration: 450ms;
+      overflow: hidden;
+
+
+
+      &:hover {
+        background-color: $accentShadow;
+        border: solid 0.1rem $buttonHover;
+        width: 250px;
+        height: 170px;
+      }
+
+    }
+  }
+
+  .dateReserve {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-bottom: 4rem;
+    flex-wrap: wrap;
+
+    .searchTable {
+      background-color: $boxes;
+      text-align: center;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $accentShadow;
+      }
+    }
+  }
+
+  .searchTable {
+    background: $accentShadow;
+    color: black;
+    border-radius: 2rem;
+    width: 6rem;
+    height: 3rem;
+
+    &:hover {
+      background-color: $accentShadow;
+    }
+
+
+  }
+
+  .hourSelect {
+    display: flex;
+    text-align: center;
+    border-radius: 2rem;
+    box-shadow: 0px 0px 4px -2px rgba(0, 0, 0, 0.5);
+    background-color: $accentShadow;
+    height: 3rem;
+    width: 8rem;
+    cursor: pointer;
+
+    option:hover {
+      background-color: $buttonHover;
+    }
+
+  }
+
+  .tradicional {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 100%;
+    gap: 0.05rem;
+  }
+
+  .reserveButton {
+    display: flex;
+    background-color: $buttonHover;
+    border-radius: 2rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6rem;
+    height: 6rem;
+    width: 100%;
+    font-size: 1.5rem;
+    transition: all;
+    transition-duration: 450ms;
+    cursor: pointer;
+
+    &:hover {
+      height: 250px;
+      box-shadow: -1.2rem 0.5rem 2rem -0.5rem $buttonHover;
+    }
+  }
+
+  .notification {
+    position: fixed;
+    top: 350px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.5s ease;
+    opacity: 0;
+    z-index: 9999;
+
+    &.show {
+      opacity: 1;
+    }
+  }
+
+
+  .cartaComida {
+    grid-area: carta;
+    display: flex;
+    flex-direction: column;
+    border-radius: 2rem;
+    flex-wrap: nowrap;
+    width: 600px;
+    color: white;
+    height: 650px;
+    background-color: $accentColor;
+    box-shadow: -1.2rem 0.5rem 2rem -0.5rem $buttonHover;
+    border: solid 0.1rem $buttonHover;
+    gap: 2rem;
+
+    .burguers {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      font-size: 1.5rem;
+      height: 100%;
+    }
+
+    h2 {
+      display: flex;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    h3 {
+      margin-left: 1rem;
+      margin-bottom: 1rem;
+      margin-top: 1rem;
+    }
+
+    p {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      margin-left: 2rem;
+
+    }
+
+  }
+
+  .calendar {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    height: 15%;
+    border-radius: 1rem;
+    background-color: $buttonHover;
+    margin-bottom: 2rem;
+    justify-items: stretch;
+    align-items: stretch;
+    box-shadow: 0rem 0rem 4rem 0.6rem $boxes;
+    border: solid $buttonHover 0.2rem;
+
+
+    .weekly {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      margin-left: 1rem;
+      margin-right: 1rem;
+
+      button {
+        width: 100%;
+        height: 80%;
+        background-color: $buttonHover;
+        border: $boxes;
+        cursor: pointer;
+        transition: all;
+        transition-duration: 450ms;
+
+        &:hover {
+          background-color: $accentShadow;
+        }
+
+        &.selected {
+          background-color: $accentShadow;
+        }
+      }
+    }
+  }
+
+  .cartaContent {
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 90%;
+    height: 75%;
+  }
+
+  .seletedRestaurant {
+    display: grid;
+    grid-template-areas: "restaurante carta carta dateMesas";
+    gap: 8rem;
+  }
+
+  @media screen and (max-width: 1650px) {
+    .seletedRestaurant {
+      display: grid;
+      grid-template-areas: "restaurante"
+        "carta"
+        "dateMesas";
+
+      gap: 3rem;
+      justify-content: space-around;
+    }
+
+    .calendar {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      height: 8rem;
+      gap: 1rem;
+      transition: all;
+      transition-duration: 450ms;
+
+      &:hover {
+        background-color: buttonHover;
+      }
+
+      &.selected {
+        background-color: buttonHover;
+      }
+    }
+
+    .mesas {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      height: 26rem;
+      margin-bottom: 6rem;
+      gap: 2rem;
+
+
+      .mesa {
+        height: 8rem;
+        width: 10rem;
+        transition: all;
+        transition-duration: 450ms;
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .seletedRestaurant {
+      display: grid;
+      width: 100%;
+      grid-template-areas: "restaurante"
+        "carta"
+        "dateMesas";
+      gap: 3rem;
+      justify-content: center;
+      height: 100%;
+    }
+
+    .cartaComida {
+      display: flex;
+      width: 500px;
+      height: 950px;
+    }
+
+    .calendar {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      height: 8rem;
+      gap: 1rem;
+      transition: all;
+      transition-duration: 450ms;
+
+      &:hover {
+        background-color: $accentShadow;
+      }
+
+      &.selected {
+        background-color: $accentShadow;
+      }
+    }
+
+    .mesas {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      height: 26rem;
+      margin-bottom: 6rem;
+      gap: 2rem;
+
+      .mesa {
+        height: 8rem;
+        width: 10rem;
+        transition: all;
+        transition-duration: 450ms;
+      }
+    }
+
+
+  }
+
+  @media screen and (max-width: 590px) {
+    .seletedRestaurant {
+      display: grid;
+      grid-template-areas: "restaurante"
+        "carta"
+        "dateMesas";
+      gap: 3rem;
+      justify-content: space-around;
+      height: 100%;
+    }
+
+    .cartaComida {
+      display: flex;
+      width: 450px;
+      height: 950px;
+    }
+
+    .calendar {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+      height: 12rem;
+      gap: 1rem;
+      transition: all;
+      transition-duration: 450ms;
+    }
+
+    .mesas {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+      height: 40rem;
+      margin-bottom: 12rem;
+      gap: 2rem;
+
+      .mesa {
+        height: 8rem;
+        width: 10rem;
+        transition: all;
+        transition-duration: 450ms;
+      }
+    }
+
+
+  }
+
+  .cardRestaurants {
+    grid-area: restaurante;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+
+    .card {
+      color: white;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      border-radius: 10px;
+      height: 300px;
+      width: 300px;
+      padding: 1rem;
+      background-color: $accentColor;
+      gap: 1rem;
+      overflow: hidden;
+      cursor: pointer;
+      border: solid 0.2rem $buttonHover;
+      box-shadow: 0rem 0rem 4rem 0.6rem $boxes;
+
+      .title {
+        display: flex;
+        text-align: center;
+        align-items: flex-start;
+      }
+
+      img {
+        display: flex;
+        margin-top: 1rem;
+        justify-content: space-around;
+        width: 150px;
+        height: 150px;
+      }
+
+      .descriptionCard {
+        display: flex;
+        align-items: flex-start;
+
+        p {
+          margin: 1rem;
+
+        }
+      }
+    }
+
+  }
+
+
+}

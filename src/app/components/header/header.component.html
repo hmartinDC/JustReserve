@@ -1,0 +1,39 @@
+<div class="container">
+  <nav class="navbar">
+    <img class="banner" routerLink="home" alt="banner" src="../../../assets/banner.png">
+    <div class="entire-menu">
+      <input type="checkbox" id="change-hamburguer" />
+      <a class="hamburguer" href="#">
+        <span></span>
+        <label for="change-hamburguer"></label>
+      </a>
+      <div class="menu">
+        <a routerLink="home">Home</a>
+        <a routerLink="restaurantes">Restaurantes</a>
+        <a *ngIf="authService.isLoggedIn" routerLink="reservas">Reservas</a>
+      </div>
+    </div>
+    <ul class="menu">
+      <a routerLink="home">Home</a>
+      <a (click)="this.restauranteService.cleanSelected()" routerLink="restaurantes">Restaurantes</a>
+      <a *ngIf="authService.isLoggedIn" routerLink="reservas">Mis Reservas</a>
+    </ul>
+    <div class="login">
+      <a routerLink="login" *ngIf="!authService.isLoggedIn" (click)="enviarLogReg(true)">
+        Inicio de Sesión
+      </a>
+      <a (click)="enviarLogReg(false)" routerLink="login" *ngIf="!authService.isLoggedIn">
+        Resgistrarme
+      </a>
+      <a routerLink="profile" *ngIf="authService.isLoggedIn">
+        Perfil
+      </a>
+      <a routerLink="login" *ngIf="authService.isLoggedIn" (click)="logOut()">
+        Log Out
+      </a>
+    </div>
+
+
+  </nav>
+
+</div>
